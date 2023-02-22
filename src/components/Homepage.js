@@ -66,7 +66,6 @@ export default function Welcome() {
       {todos.map((item) => (
         <div>
           <h1>{item.todo}</h1>
-          <button>Update</button>
           <button onClick={() => handleDelete(item.uidd)}>Delete</button>
         </div>
       ))}

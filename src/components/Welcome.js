@@ -25,7 +25,7 @@ export default function Welcome() {
         navigate("/homepage");
       }
     });
-  });
+  }, []);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
