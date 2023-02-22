@@ -36,13 +36,11 @@ export default function Welcome() {
   };
 
   const handleSignin = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/homepage");
       })
-      .catch((err) => {
-        alert(err.message);
-      });
+      .catch((err) => alert(err.message));
   };
 
   const handleRegister = () => {
@@ -54,7 +52,7 @@ export default function Welcome() {
       return;
     }
 
-    signInWithEmailAndPassword(
+    createUserWithEmailAndPassword(
       auth,
       registerInformation.email,
       registerInformation.password
@@ -62,7 +60,9 @@ export default function Welcome() {
       .then(() => {
         navigate("/homepage");
       })
-      .catch((err) => alert(err.message));
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   return (
