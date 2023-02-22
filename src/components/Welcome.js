@@ -82,17 +82,7 @@ export default function Welcome() {
                 })
               }
             />
-            <input
-              type="email"
-              placeholder="Confirm Email"
-              value={registerInformation.confirmEmail}
-              onChange={(e) =>
-                setRegisterInformation({
-                  ...registerInformation,
-                  confirmEmail: e.target.value,
-                })
-              }
-            />
+
             <input
               type="password"
               placeholder="Password"
@@ -101,6 +91,17 @@ export default function Welcome() {
                 setRegisterInformation({
                   ...registerInformation,
                   password: e.target.value,
+                })
+              }
+            />
+            <input
+              type="email"
+              placeholder="Confirm Email"
+              value={registerInformation.confirmEmail}
+              onChange={(e) =>
+                setRegisterInformation({
+                  ...registerInformation,
+                  confirmEmail: e.target.value,
                 })
               }
             />
