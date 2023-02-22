@@ -56,6 +56,7 @@ export default function Welcome() {
       <h1>Homepage</h1>
       <input
         type="text"
+        placeholder="Add To-Do"
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />

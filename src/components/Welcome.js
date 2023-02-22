@@ -127,9 +127,15 @@ export default function Welcome() {
           </>
         ) : (
           <>
-            <input type="email" onChange={handleEmailChange} value={email} />
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={handleEmailChange}
+              value={email}
+            />
             <input
               type="password"
+              placeholder="Password"
               onChange={handlePasswordChange}
               value={password}
             />
