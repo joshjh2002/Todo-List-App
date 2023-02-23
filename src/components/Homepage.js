@@ -21,12 +21,14 @@ export default function Welcome() {
           if (data !== null) {
             Object.values(data).map((item) => {
               setTodos((oldArray) => [...oldArray, item]);
+              return true;
             });
           }
         });
       }
     });
-  }, []);
+    return;
+  }, [navigate]);
 
   const handleSignout = () => {
     signOut(auth)
@@ -54,21 +56,23 @@ export default function Welcome() {
   return (
     <div>
       <h1>Homepage</h1>
-      <input
-        type="text"
-        placeholder="Add To-Do"
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
-      />
-      <button onClick={writeToDatabase}>Add Item</button>
-      <button onClick={handleSignout}>Sign Out</button>
+      <div className="login">
+        <input
+          type="text"
+          placeholder="Add To-Do"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+        />
+        <button onClick={writeToDatabase}>Add Item</button>
+        <button onClick={handleSignout}>Sign Out</button>
 
-      {todos.map((item) => (
-        <div>
-          <h1>{item.todo}</h1>
-          <button onClick={() => handleDelete(item.uidd)}>Delete</button>
-        </div>
-      ))}
+        {todos.map((item) => (
+          <div>
+            <h1>{item.todo}</h1>
+            <button onClick={() => handleDelete(item.uidd)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

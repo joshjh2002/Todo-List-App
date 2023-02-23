@@ -25,7 +25,7 @@ export default function Welcome() {
         navigate("/homepage");
       }
     });
-  }, []);
+  }, [navigate]);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -67,8 +67,8 @@ export default function Welcome() {
 
   return (
     <div>
-      <h1>To-Do List</h1>
-      <div>
+      <h1>Login or Create Account</h1>
+      <div class="login">
         {isRegistering ? (
           <>
             <input
